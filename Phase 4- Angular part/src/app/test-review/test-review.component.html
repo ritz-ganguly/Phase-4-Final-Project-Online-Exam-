@@ -1,0 +1,42 @@
+<div class="container" *ngFor="let q of qset">
+    <div class="container-fluid">
+
+        Question) {{q.questionStatement}}
+
+    </div>
+    <br><br>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" [disabled]="true"
+            [checked]="q.option1==q.repliedAnswer">{{q.option1}}
+
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" [disabled]="true"
+            [checked]="q.option2==q.repliedAnswer">{{q.option2}}
+
+    </div>
+
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" [disabled]="true"
+            [checked]="q.option3==q.repliedAnswer">{{q.option3}}
+
+    </div>
+
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" [disabled]="true"
+            [checked]="q.option4==q.repliedAnswer">{{q.option4}}
+
+    </div>
+
+    <br><br>
+
+</div>
+
+<br><br>
+<button class="btn btn-primary" (click)="back()">Back To Test</button>
+
+
+<!-- <a routerLink="/test-home">Back to test</a> -->

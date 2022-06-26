@@ -1,0 +1,31 @@
+<div class="container">
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Total Marks</th>
+                <th>Marks Obtained</th>
+                <th>Total Answered</th>
+                <th>wrong Answered</th>
+                <th>Unanswered</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+
+                <td>{{totalMarks}}</td>
+                <td>{{marksObtained}}</td>
+                <td>{{totalAnswered}}</td>
+                <td>{{wrongAnswered}}</td>
+                <td>{{unAnswered}}</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+    <button class="btn btn-primary" (click)="endTest()"> End test</button>
+</div>

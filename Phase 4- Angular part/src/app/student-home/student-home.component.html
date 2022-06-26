@@ -1,0 +1,17 @@
+<h1>Home page</h1>
+<a routerLink="/change-student-password">Change Password</a><br>
+<a routerLink="/student-test-history">Get Test History</a><br>
+<a routerLink="/student-logout">Logout</a>
+
+<br><br>
+<div class="form-froup">
+    <!-- <p *ngFor="let i of questionTypes  | keyvalue">{{i.key}} : {{i.value}}</p>  -->
+
+    <label>Select the test topic of your choice</label>
+    <select name="testTopic" [(ngModel)]="testChosen" class="form-control">
+        <option *ngFor="let i of questionTypes  | keyvalue" [value]="i.value"> {{i.value}}</option>
+    </select>
+    <br>
+    <button class="btn btn-primary" (click)="onProceed()"> Proceed to test</button>
+
+</div>

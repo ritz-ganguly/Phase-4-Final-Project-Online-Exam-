@@ -1,0 +1,28 @@
+<h1>Student Test History page</h1>
+<a routerLink="/student-home">Home Page</a><br>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+
+            <th>Total Marks</th>
+            <th>Marks Obtained</th>
+            <th>Subject</th>
+            <th>Test Date</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let r of results">
+
+            <td>{{r.totalMarks}}</td>
+            <td>{{r.marksObtained}}</td>
+            <td>{{r.testType}}</td>
+            <td>{{r.testDate}}</td>
+
+        </tr>
+
+
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+<!--
+<div class="container" *ngFor="let q of questionSet">
+    <p> {{q.option1}}</p>
+
+
+
+</div>
+-->
+
+
+<div class="container">
+    <div class="container" *ngIf="staticquestionReady == true">
+        Question) {{staticquestionSet[staticselectedIndex]['questionStatement'] }}
+
+        <br><br>
+        <div class="form-check">
+            <input name="userAnswer" class="form-check-input" type="radio"
+                [value]="staticquestionSet[staticselectedIndex]['option1']"
+                [(ngModel)]=" staticquestionSet[staticselectedIndex]['repliedAnswer']">{{staticquestionSet[staticselectedIndex]['option1']}}
+
+        </div>
+        <div class="form-check">
+            <input name="userAnswer" class="form-check-input" type="radio"
+                [value]="staticquestionSet[staticselectedIndex]['option2']"
+                [(ngModel)]="staticquestionSet[staticselectedIndex]['repliedAnswer']">{{staticquestionSet[staticselectedIndex]['option2']}}
+
+
+        </div>
+
+
+        <div class="form-check">
+            <input name="userAnswer" type="radio" class="form-check-input"
+                [value]="staticquestionSet[staticselectedIndex]['option3']"
+                [(ngModel)]=" staticquestionSet[staticselectedIndex]['repliedAnswer']">{{staticquestionSet[staticselectedIndex]['option3']}}
+        </div>
+        <div class="form-check">
+            <input name="userAnswer" type="radio" class="form-check-input"
+                [value]="staticquestionSet[staticselectedIndex]['option4']"
+                [(ngModel)]=" staticquestionSet[staticselectedIndex]['repliedAnswer']">{{staticquestionSet[staticselectedIndex]['option4']}}
+        </div>
+    </div>
+
+
+    <button class="btn btn-primary" (click)="previous()"> Previous</button>
+
+
+    <button class="btn btn-primary" (click)="next()"> Next</button>
+    <button class="btn btn-primary" (click)="review()"> Review</button>
+
+    <button class="btn btn-primary" (click)="submitTest()">Submit test</button>
+
+
+</div>
