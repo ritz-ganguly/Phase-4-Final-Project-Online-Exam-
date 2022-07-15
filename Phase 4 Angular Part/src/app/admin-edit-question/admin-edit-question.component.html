@@ -1,0 +1,114 @@
+<h1>Admin Edit Question</h1>
+
+<div class="container" *ngFor="let q of quest">
+    <form #editQuestionsForm="ngForm" (ngSubmit)="onSubmit(editQuestionsForm.value)">
+        <div>
+            <label>Question Statement</label><br>
+            <input type="text" name="questionStatement" maxlength="150" required [(ngModel)]="q.questionStatement"
+                #questionStatement="ngModel">
+
+            <div *ngIf="questionStatement.touched && questionStatement.invalid">
+                <p *ngIf="questionStatement.errors && questionStatement.errors['required']">Statement is required </p>
+                <p *ngIf="questionStatement.errors && questionStatement.errors['maxlength']">Maximum length is 150 chars
+                </p>
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <div>
+            <label>Option 1</label> <br>
+            <input type="text" name="option1" maxlength="150" [(ngModel)]="q.option1" #option1="ngModel" required>
+            <div *ngIf="option1.touched && option1.invalid">
+                <p *ngIf="option1.errors && option1.errors['required']">Option1 is required</p>
+                <p *ngIf="option1.errors && option1.errors['maxlength']">Maximum length is 150 chars </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+            <label>Option 2</label> <br>
+            <input type="text" name="option2" maxlength="150" [(ngModel)]="q.option2" #option2="ngModel" required>
+            <div *ngIf="option2.touched && option2.invalid">
+                <p *ngIf="option2.errors && option2.errors['required']">Option2 is required</p>
+                <p *ngIf="option2.errors && option2.errors['maxlength']">Maximum length is 150 chars </p>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div>
+            <label>Option 3</label> <br>
+            <input type="text" name="option3" maxlength="150" [(ngModel)]="q.option3" #option3="ngModel" required>
+            <div *ngIf="option3.touched && option3.invalid">
+                <p *ngIf="option3.errors && option3.errors['required']">Option3 is required</p>
+                <p *ngIf="option3.errors && option3.errors['maxlength']">Maximum length is 150 chars </p>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div>
+            <label>Option 4</label> <br>
+            <input type="text" name="option4" maxlength="150" [(ngModel)]="q.option4" #option4="ngModel" required>
+            <div *ngIf="option4.touched && option4.invalid">
+                <p *ngIf="option4.errors && option4.errors['required']">Option4 is required</p>
+                <p *ngIf="option4.errors && option4.errors['maxlength']">Maximum length is 150 chars </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+            <label>Answer</label> <br>
+            <input type="text" name="answer" maxlength="150" [(ngModel)]="q.answer" #answer="ngModel" required>
+            <div *ngIf="answer.touched && answer.invalid">
+                <p *ngIf="answer.errors && answer.errors['required']">answer is required</p>
+                <p *ngIf="answer.errors && answer.errors['maxlength']">Maximum length is 150 chars </p>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div>
+            <label>Question Type</label> <br>
+            <input type="text" name="questionType" maxlength="150" [(ngModel)]="q.questionType" #questionType="ngModel"
+                required>
+            <div *ngIf="questionType.touched && questionType.invalid">
+                <p *ngIf="questionType.errors && questionType.errors['required']">questionType is required</p>
+                <p *ngIf="questionType.errors && questionType.errors['maxlength']">Maximum length is 150 chars </p>
+
+            </div>
+
+        </div>
+
+
+
+        <button class="btn btn-primary" type="submit" [disabled]="!editQuestionsForm.valid">Edit</button>
+
+
+    </form>
+
+
+
+</div>

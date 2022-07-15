@@ -1,0 +1,45 @@
+<p>Admin questions List</p>
+
+
+<div class="container">
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Question ID</th>
+                <th>Question Statement</th>
+                <th>Option 1</th>
+                <th>Option 2</th>
+                <th>Option 3</th>
+                <th>Option 4</th>
+                <th>Correct Answer</th>
+                <th>Question Type</th>
+                <th><input type="text" [(ngModel)]="searchText" placeholder="Search Question by type"></th>
+                <th>Action Delete</th>
+                <th>Action Edit</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let q of quest | filterByQuestionType: searchText: 'questionType'">
+
+                <td>{{q.questionId}}</td>
+                <td>{{q.questionStatement}}</td>
+                <td>{{q.option1}}</td>
+                <td>{{q.option2}}</td>
+                <td>{{q.option3}}</td>
+                <td>{{q.option4}}</td>
+                <td>{{q.answer}}</td>
+                <td>{{q.questionType}}</td>
+                <td></td>
+                <td><button class="btn btn-primary" (click)="actionDelete(q)">Delete</button></td>
+                <td><a routerLink="../admin-edit-question/{{q.questionId}}">Edit</a></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <br><br>
+    <button class="btn btn-primary" (click)="goBack()">go Back to Home</button>

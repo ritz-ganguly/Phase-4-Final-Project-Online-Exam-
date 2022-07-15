@@ -1,5 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminAddQuestionsComponent } from './admin-add-questions/admin-add-questions.component';
+import { AdminAuthGuardGuard } from './admin-auth-guard.guard';
+import { AdminEditQuestionComponent } from './admin-edit-question/admin-edit-question.component';
+import { AdminGetResultsComponent } from './admin-get-results/admin-get-results.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminLogoutComponent } from './admin-logout/admin-logout.component';
+import { AdminQuestionsListComponent } from './admin-questions-list/admin-questions-list.component';
+import { ChangeAdminPasswordComponent } from './change-admin-password/change-admin-password.component';
 import { ChangeStudentPasswordComponent } from './change-student-password/change-student-password.component';
 import { MyAuthGuardGuard } from './my-auth-guard.guard';
 import { MyTestAuthGuardGuard } from './my-test-auth-guard.guard';
@@ -51,7 +60,44 @@ const routes: Routes = [
 
   {
     path: "student-signup", pathMatch: 'full', component: StudentSignupComponent
+  },
+
+  {
+    path: "admin-login", pathMatch: 'full', component: AdminLoginComponent
+  },
+
+  {
+    path: "admin-home", pathMatch: 'full', component: AdminHomeComponent,
+    canActivate: [AdminAuthGuardGuard]
+  },
+
+  {
+    path: "admin-logout", pathMatch: 'full', component: AdminLogoutComponent,
+    canActivate: [AdminAuthGuardGuard]
+  },
+  {
+    path: "admin-questions-list", pathMatch: 'full', component: AdminQuestionsListComponent,
+    canActivate: [AdminAuthGuardGuard]
+  },
+  {
+    path: "admin-add-questions", pathMatch: 'full', component: AdminAddQuestionsComponent,
+    canActivate: [AdminAuthGuardGuard]
+  },
+
+  {
+    path: "change-admin-password", pathMatch: 'full', component: ChangeAdminPasswordComponent,
+    canActivate: [AdminAuthGuardGuard]
+  },
+  {
+    path: "admin-get-results", pathMatch: 'full', component: AdminGetResultsComponent,
+    canActivate: [AdminAuthGuardGuard]
+  },
+
+  {
+    path: "admin-edit-question/:id", pathMatch: 'full', component: AdminEditQuestionComponent,
+    canActivate: [AdminAuthGuardGuard]
   }
+
 
 
 

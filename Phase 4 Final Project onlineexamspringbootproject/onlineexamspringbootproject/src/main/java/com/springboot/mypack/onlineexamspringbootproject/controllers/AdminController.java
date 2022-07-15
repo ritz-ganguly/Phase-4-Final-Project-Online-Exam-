@@ -31,15 +31,15 @@ public class AdminController {
 	
 	
 	@PostMapping("/signIn")
-	public boolean adminSignIn(@RequestBody User user) {
+	public String adminSignIn(@RequestBody User user) {
 		
 		boolean status = adminService.adminSignIn(user);
 		
 		if(status == false)
-			return false;
+			return "failed";
 		else {
 			
-			return true;
+			return user.getUserName();
 			
 		}
 		

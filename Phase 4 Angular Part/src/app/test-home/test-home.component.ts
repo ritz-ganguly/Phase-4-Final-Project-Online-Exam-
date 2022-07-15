@@ -112,7 +112,9 @@ export class TestHomeComponent implements OnInit {
 
     this.res.testDate = new Date();
     this.ss.insertResult(this.res).subscribe(response => console.log(response));
-
+    for (var q of TestHomeComponent.questionSet) {
+      q.repliedAnswer = "";
+    }
 
     this.router.navigate(['/test-final-page']);
 

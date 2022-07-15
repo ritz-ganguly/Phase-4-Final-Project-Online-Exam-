@@ -14,11 +14,13 @@ export class StudentLoginComponent implements OnInit {
   constructor(private ss: StudentServiceService, private router: Router) { }
 
   ngOnInit(): void {
+    sessionStorage.clear();
   }
 
   onSubmit(form: any) {
     this.ss.login(this.student).subscribe(response => {
       if (String(response) !== "failed") {
+
         this.loginSuccess = true;
         sessionStorage.setItem("studentUserName", String(response));
         sessionStorage.setItem("isUserLoggedIn", "true");
